@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>S.C Public School</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -106,6 +106,137 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
+.card h2 {
+    margin-bottom: 6px;
+    color: #0b7a3e;
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0b7a3e;
+}
+
+.card .subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* BOOK LIST — styled header */
+.card.book-list-card {
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(11, 122, 62, 0.12);
+    box-shadow: 0 8px 32px rgba(11, 122, 62, 0.08);
+}
+
+.book-list-hero {
+    text-align: center;
+    padding: 32px 24px 28px;
+    background: linear-gradient(165deg, #ecfdf5 0%, #f0fdf4 35%, #ffffff 100%);
+    border-bottom: 1px solid rgba(11, 122, 62, 0.1);
+    position: relative;
+}
+
+.book-list-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0b7a3e, #22c55e, #0b7a3e);
+}
+
+.book-list-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #15803d;
+    margin-bottom: 12px;
+}
+
+.book-list-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.85rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #14532d;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.book-list-title span {
+    background: linear-gradient(120deg, #0b7a3e 0%, #16a34a 50%, #15803d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.book-list-publisher {
+    margin-bottom: 14px;
+}
+
+.book-list-publisher-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #0b7a3e 0%, #0f9d50 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(11, 122, 62, 0.35);
+}
+
+.book-list-publisher-name::before {
+    content: "📚";
+    font-size: 1rem;
+}
+
+.book-list-tagline {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.book-list-tagline strong {
+    color: #0b7a3e;
+    font-weight: 600;
+}
+
+.book-list-card .table-scroll {
+    margin-top: 0;
+    padding: 16px 16px 20px;
+}
+
+.book-list-card table {
+    margin-top: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.book-list-card th {
+    background: linear-gradient(180deg, #0d8f47 0%, #0b7a3e 100%);
+    padding: 12px 10px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}
+
+.book-list-card tbody tr:hover td {
+    background: #f8fffc;
+}
+
 /* TABLE */
 table {
     width: 100%;
@@ -122,6 +253,29 @@ th, td {
     padding: 10px;
     border-bottom: 1px solid #eee;
     text-align: center;
+}
+
+td.book-name,
+td.address-cell {
+    text-align: left;
+}
+
+td.address-cell {
+    font-size: 13px;
+    line-height: 1.45;
+    white-space: normal;
+    min-width: 180px;
+}
+
+tr.total-row td {
+    font-weight: 600;
+    background: #f0fdf4;
+    border-bottom: none;
+}
+
+.table-scroll {
+    overflow-x: auto;
+    margin-top: 10px;
 }
 
 /* BUTTON */
@@ -163,6 +317,20 @@ button {
     .hero h1 {
         font-size: 26px;
     }
+
+    th, td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .book-list-hero {
+        padding: 26px 16px 22px;
+    }
+
+    .book-list-publisher-name {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
 }
 </style>
 </head>
@@ -200,22 +368,119 @@ button {
     <!-- GALLERY -->
     <h2 class="section-title">Gallery</h2>
     <div class="gallery">
-        <img src="https://raw.githubusercontent.com/sonalisinha750/website/main/photo1.jpeg">
-        <img src="https://raw.githubusercontent.com/sonalisinha750/website/main/photo2.jpeg">
+        <img src="https://raw.githubusercontent.com/sonalisinha750/website/main/photo1.jpeg" alt="School photo 1">
+        <img src="https://raw.githubusercontent.com/sonalisinha750/website/main/photo2.jpeg" alt="School photo 2">
     </div>
 
-    <!-- BOOK -->
-    <div class="card">
-        <h2>Book List</h2>
-        <table id="bookTable">
-            <tr>
-                <th>Class</th>
-                <th>Book</th>
-                <th>Price</th>
-                <th>Address</th>
-            </tr>
-        </table>
-        <button onclick="addBook()">Add Book</button>
+    <!-- BOOK LIST — SANGAM PUBLICATION -->
+    <div class="card book-list-card">
+        <div class="book-list-hero">
+            <p class="book-list-eyebrow">Academic resources</p>
+            <h2 class="book-list-title"><span>Book list</span></h2>
+            <div class="book-list-publisher">
+                <span class="book-list-publisher-name">Sangam Publication</span>
+            </div>
+            <p class="book-list-tagline"><strong>English medium</strong> · Class I to V · Prices in <strong>₹</strong></p>
+        </div>
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Book name</th>
+                        <th>Class I</th>
+                        <th>Class II</th>
+                        <th>Class III</th>
+                        <th>Class IV</th>
+                        <th>Class V</th>
+                        <th>Where to buy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="book-name">Banny Beetles English</td>
+                        <td>260</td><td>270</td><td>280</td><td>290</td><td>300</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="book-name">Shabri Hindi Pathmala</td>
+                        <td>240</td><td>250</td><td>260</td><td>270</td><td>280</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="book-name">Magnetic Maths</td>
+                        <td>300</td><td>320</td><td>360</td><td>400</td><td>420</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="book-name">Global Science</td>
+                        <td>260</td><td>270</td><td>280</td><td>290</td><td>300</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="book-name">Social Links</td>
+                        <td>260</td><td>270</td><td>280</td><td>290</td><td>300</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="book-name">Computer Treasure</td>
+                        <td>150</td><td>160</td><td>170</td><td>180</td><td>190</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td class="book-name">Knowledge Bugs</td>
+                        <td>200</td><td>210</td><td>220</td><td>230</td><td>240</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td class="book-name">Modern English Grammar</td>
+                        <td>220</td><td>230</td><td>240</td><td>250</td><td>260</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td class="book-name">Vyakaran Manjari</td>
+                        <td>200</td><td>220</td><td>230</td><td>240</td><td>260</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="book-name">Sanskrit Sagar</td>
+                        <td>140</td><td>150</td><td>160</td><td>170</td><td>180</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td class="book-name">Pikaso Urdu</td>
+                        <td>175</td><td>175</td><td>185</td><td>195</td><td>195</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td class="book-name">Values Forever</td>
+                        <td>200</td><td>210</td><td>220</td><td>230</td><td>240</td>
+                        <td class="address-cell">New Mishra pustak Trwara<br>satyaram pustak bhandar shivdhari mor</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2">Total</td>
+                        <td>2605</td>
+                        <td>2735</td>
+                        <td>2885</td>
+                        <td>3035</td>
+                        <td>3165</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- UNIFORM -->
@@ -240,21 +505,6 @@ button {
 </div>
 
 <script>
-function addBook() {
-    let c = prompt("Class:");
-    let b = prompt("Book:");
-    let p = prompt("Price:");
-    let a = prompt("Address:");
-
-    if(c && b && p && a){
-        let row = document.getElementById("bookTable").insertRow(-1);
-        row.insertCell(0).innerText = c;
-        row.insertCell(1).innerText = b;
-        row.insertCell(2).innerText = p;
-        row.insertCell(3).innerText = a;
-    }
-}
-
 function addUniform() {
     let i = prompt("Item:");
     let d = prompt("Description:");
